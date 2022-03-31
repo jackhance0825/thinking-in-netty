@@ -1,4 +1,4 @@
-package com.jackhance.netty.message.fixlength;
+package com.jackhance.netty.pack.delimiter;
 
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -7,14 +7,14 @@ import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 
 /**
- * fix length message handler
+ * delimiter message handler
  *
  * @author jackhance
  * @mail jackhance0825@163.com
  */
 @ChannelHandler.Sharable
-public class FixLengthHandler extends SimpleChannelInboundHandler<String> {
-    private InternalLogger log = InternalLoggerFactory.getInstance(FixLengthHandler.class.getName());
+public class DelimiterHandler extends SimpleChannelInboundHandler<String> {
+    private InternalLogger log = InternalLoggerFactory.getInstance(DelimiterHandler.class.getName());
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {

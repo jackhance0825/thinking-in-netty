@@ -1,6 +1,6 @@
-package com.jackhance.netty.message.lengthfield.codec;
+package com.jackhance.netty.pack.lengthfield.codec;
 
-import com.jackhance.netty.message.lengthfield.LengthFieldConstant;
+import com.jackhance.netty.pack.lengthfield.LengthFieldConstant;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 /**

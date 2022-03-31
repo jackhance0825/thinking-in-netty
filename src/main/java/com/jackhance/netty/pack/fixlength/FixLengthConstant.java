@@ -1,4 +1,4 @@
-package com.jackhance.netty.message.fixlength;
+package com.jackhance.netty.pack.fixlength;
 
 /**
  * 常量

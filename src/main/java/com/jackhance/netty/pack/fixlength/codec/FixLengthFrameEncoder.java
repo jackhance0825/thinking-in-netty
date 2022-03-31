@@ -1,7 +1,7 @@
-package com.jackhance.netty.message.fixlength.codec;
+package com.jackhance.netty.pack.fixlength.codec;
 
-import com.jackhance.netty.message.fixlength.FixLengthConstant;
-import com.jackhance.netty.message.fixlength.FixLengthHandler;
+import com.jackhance.netty.pack.fixlength.FixLengthConstant;
+import com.jackhance.netty.pack.fixlength.FixLengthHandler;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;

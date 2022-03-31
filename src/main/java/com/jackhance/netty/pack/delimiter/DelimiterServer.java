@@ -1,6 +1,9 @@
-package com.jackhance.netty.message.fixlength;
+package com.jackhance.netty.pack.delimiter;
 
-import com.jackhance.netty.message.fixlength.codec.*;
+import com.jackhance.netty.pack.delimiter.codec.DelimiterFrameDecoder;
+import com.jackhance.netty.pack.delimiter.codec.DelimiterFrameEncoder;
+import com.jackhance.netty.pack.delimiter.codec.DelimiterProtocolDecoder;
+import com.jackhance.netty.pack.delimiter.codec.DelimiterProtocolEncoder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -15,12 +18,12 @@ import io.netty.util.concurrent.DefaultThreadFactory;
 import io.netty.util.internal.SystemPropertyUtil;
 
 /**
- * fix length message server
+ * delimiter message server
  *
  * @author jackhance
  * @mail jackhance0825@163.com
  */
-public class FixLengthServer {
+public class DelimiterServer {
 
     private static final int PORT = SystemPropertyUtil.getInt("port", 8007);
 
@@ -29,7 +32,7 @@ public class FixLengthServer {
         NioEventLoopGroup boss = new NioEventLoopGroup(1, new DefaultThreadFactory("boss"));
         NioEventLoopGroup worker = new NioEventLoopGroup(0, new DefaultThreadFactory("worker"));
         try {
-            FixLengthHandler handler = new FixLengthHandler();
+            DelimiterHandler handler = new DelimiterHandler();
 
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(boss, worker)
@@ -43,11 +46,11 @@ public class FixLengthServer {
                             ChannelPipeline p = ch.pipeline();
                             p.addLast("loggingHandler", new LoggingHandler(LogLevel.INFO));
 
-                            p.addLast("frameDecoder", new FixLengthFrameDecoder());
-                            p.addLast("frameEncoder", new FixLengthFrameEncoder());
+                            p.addLast("frameDecoder", new DelimiterFrameDecoder());
+                            p.addLast("frameEncoder", new DelimiterFrameEncoder());
 
-                            p.addLast("protocolDecoder", new FixLengthProtocolDecoder());
-                            p.addLast("protocolEncoder", new FixLengthProtocolEncoder());
+                            p.addLast("protocolDecoder", new DelimiterProtocolDecoder());
+                            p.addLast("protocolEncoder", new DelimiterProtocolEncoder());
 
                             p.addLast("handler", handler);
                         }

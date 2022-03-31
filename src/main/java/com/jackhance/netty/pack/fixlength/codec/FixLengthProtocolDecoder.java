@@ -1,4 +1,4 @@
-package com.jackhance.netty.message.fixlength.codec;
+package com.jackhance.netty.pack.fixlength.codec;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

@@ -1,4 +1,4 @@
-package com.jackhance.netty.message.delimiter;
+package com.jackhance.netty.pack.delimiter;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;

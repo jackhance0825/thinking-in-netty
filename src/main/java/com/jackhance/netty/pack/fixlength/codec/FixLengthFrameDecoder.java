@@ -1,6 +1,6 @@
-package com.jackhance.netty.message.fixlength.codec;
+package com.jackhance.netty.pack.fixlength.codec;
 
-import com.jackhance.netty.message.fixlength.FixLengthConstant;
+import com.jackhance.netty.pack.fixlength.FixLengthConstant;
 import io.netty.handler.codec.FixedLengthFrameDecoder;
 
 /**

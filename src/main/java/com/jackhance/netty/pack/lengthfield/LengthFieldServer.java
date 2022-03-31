@@ -1,9 +1,9 @@
-package com.jackhance.netty.message.delimiter;
+package com.jackhance.netty.pack.lengthfield;
 
-import com.jackhance.netty.message.delimiter.codec.DelimiterFrameDecoder;
-import com.jackhance.netty.message.delimiter.codec.DelimiterFrameEncoder;
-import com.jackhance.netty.message.delimiter.codec.DelimiterProtocolDecoder;
-import com.jackhance.netty.message.delimiter.codec.DelimiterProtocolEncoder;
+import com.jackhance.netty.pack.lengthfield.codec.LengthFieldFrameDecoder;
+import com.jackhance.netty.pack.lengthfield.codec.LengthFieldFrameEncoder;
+import com.jackhance.netty.pack.lengthfield.codec.LengthFieldProtocolDecoder;
+import com.jackhance.netty.pack.lengthfield.codec.LengthFieldProtocolEncoder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -18,12 +18,12 @@ import io.netty.util.concurrent.DefaultThreadFactory;
 import io.netty.util.internal.SystemPropertyUtil;
 
 /**
- * delimiter message server
+ * length field message server
  *
  * @author jackhance
  * @mail jackhance0825@163.com
  */
-public class DelimiterServer {
+public class LengthFieldServer {
 
     private static final int PORT = SystemPropertyUtil.getInt("port", 8007);
 
@@ -32,7 +32,7 @@ public class DelimiterServer {
         NioEventLoopGroup boss = new NioEventLoopGroup(1, new DefaultThreadFactory("boss"));
         NioEventLoopGroup worker = new NioEventLoopGroup(0, new DefaultThreadFactory("worker"));
         try {
-            DelimiterHandler handler = new DelimiterHandler();
+            LengthFieldHandler handler = new LengthFieldHandler();
 
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(boss, worker)
@@ -46,11 +46,11 @@ public class DelimiterServer {
                             ChannelPipeline p = ch.pipeline();
                             p.addLast("loggingHandler", new LoggingHandler(LogLevel.INFO));
 
-                            p.addLast("frameDecoder", new DelimiterFrameDecoder());
-                            p.addLast("frameEncoder", new DelimiterFrameEncoder());
+                            p.addLast("frameDecoder", new LengthFieldFrameDecoder());
+                            p.addLast("frameEncoder", new LengthFieldFrameEncoder());
 
-                            p.addLast("protocolDecoder", new DelimiterProtocolDecoder());
-                            p.addLast("protocolEncoder", new DelimiterProtocolEncoder());
+                            p.addLast("protocolDecoder", new LengthFieldProtocolDecoder());
+                            p.addLast("protocolEncoder", new LengthFieldProtocolEncoder());
 
                             p.addLast("handler", handler);
                         }

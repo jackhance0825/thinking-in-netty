@@ -1,8 +1,8 @@
-package com.jackhance.netty.message.delimiter.codec;
+package com.jackhance.netty.pack.delimiter.codec;
 
-import com.jackhance.netty.message.delimiter.DelimiterConstant;
-import com.jackhance.netty.message.fixlength.FixLengthConstant;
-import com.jackhance.netty.message.fixlength.FixLengthHandler;
+import com.jackhance.netty.pack.delimiter.DelimiterConstant;
+import com.jackhance.netty.pack.fixlength.FixLengthConstant;
+import com.jackhance.netty.pack.fixlength.FixLengthHandler;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;

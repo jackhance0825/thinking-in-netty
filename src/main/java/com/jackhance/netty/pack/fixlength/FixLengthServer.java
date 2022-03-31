@@ -1,9 +1,6 @@
-package com.jackhance.netty.message.lengthfield;
+package com.jackhance.netty.pack.fixlength;
 
-import com.jackhance.netty.message.lengthfield.codec.LengthFieldFrameDecoder;
-import com.jackhance.netty.message.lengthfield.codec.LengthFieldFrameEncoder;
-import com.jackhance.netty.message.lengthfield.codec.LengthFieldProtocolDecoder;
-import com.jackhance.netty.message.lengthfield.codec.LengthFieldProtocolEncoder;
+import com.jackhance.netty.pack.fixlength.codec.*;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -18,12 +15,12 @@ import io.netty.util.concurrent.DefaultThreadFactory;
 import io.netty.util.internal.SystemPropertyUtil;
 
 /**
- * length field message server
+ * fix length message server
  *
  * @author jackhance
  * @mail jackhance0825@163.com
  */
-public class LengthFieldServer {
+public class FixLengthServer {
 
     private static final int PORT = SystemPropertyUtil.getInt("port", 8007);
 
@@ -32,7 +29,7 @@ public class LengthFieldServer {
         NioEventLoopGroup boss = new NioEventLoopGroup(1, new DefaultThreadFactory("boss"));
         NioEventLoopGroup worker = new NioEventLoopGroup(0, new DefaultThreadFactory("worker"));
         try {
-            LengthFieldHandler handler = new LengthFieldHandler();
+            FixLengthHandler handler = new FixLengthHandler();
 
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(boss, worker)
@@ -46,11 +43,11 @@ public class LengthFieldServer {
                             ChannelPipeline p = ch.pipeline();
                             p.addLast("loggingHandler", new LoggingHandler(LogLevel.INFO));
 
-                            p.addLast("frameDecoder", new LengthFieldFrameDecoder());
-                            p.addLast("frameEncoder", new LengthFieldFrameEncoder());
+                            p.addLast("frameDecoder", new FixLengthFrameDecoder());
+                            p.addLast("frameEncoder", new FixLengthFrameEncoder());
 
-                            p.addLast("protocolDecoder", new LengthFieldProtocolDecoder());
-                            p.addLast("protocolEncoder", new LengthFieldProtocolEncoder());
+                            p.addLast("protocolDecoder", new FixLengthProtocolDecoder());
+                            p.addLast("protocolEncoder", new FixLengthProtocolEncoder());
 
                             p.addLast("handler", handler);
                         }

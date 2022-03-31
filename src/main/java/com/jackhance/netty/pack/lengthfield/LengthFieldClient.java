@@ -1,9 +1,9 @@
-package com.jackhance.netty.message.lengthfield;
+package com.jackhance.netty.pack.lengthfield;
 
-import com.jackhance.netty.message.lengthfield.codec.LengthFieldFrameDecoder;
-import com.jackhance.netty.message.lengthfield.codec.LengthFieldFrameEncoder;
-import com.jackhance.netty.message.lengthfield.codec.LengthFieldProtocolDecoder;
-import com.jackhance.netty.message.lengthfield.codec.LengthFieldProtocolEncoder;
+import com.jackhance.netty.pack.lengthfield.codec.LengthFieldFrameDecoder;
+import com.jackhance.netty.pack.lengthfield.codec.LengthFieldFrameEncoder;
+import com.jackhance.netty.pack.lengthfield.codec.LengthFieldProtocolDecoder;
+import com.jackhance.netty.pack.lengthfield.codec.LengthFieldProtocolEncoder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

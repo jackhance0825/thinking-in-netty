@@ -1,6 +1,6 @@
-package com.jackhance.netty.message.delimiter.codec;
+package com.jackhance.netty.pack.delimiter.codec;
 
-import com.jackhance.netty.message.delimiter.DelimiterConstant;
+import com.jackhance.netty.pack.delimiter.DelimiterConstant;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 
 /**

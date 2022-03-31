@@ -1,6 +1,6 @@
-package com.jackhance.netty.message.fixlength;
+package com.jackhance.netty.pack.fixlength;
 
-import com.jackhance.netty.message.fixlength.codec.*;
+import com.jackhance.netty.pack.fixlength.codec.*;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

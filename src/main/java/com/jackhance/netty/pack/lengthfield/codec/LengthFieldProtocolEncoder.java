@@ -1,4 +1,4 @@
-package com.jackhance.netty.message.delimiter.codec;
+package com.jackhance.netty.pack.lengthfield.codec;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -8,12 +8,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
- * delimiter message protocol encoder
+ * length field message protocol encoder
  *
  * @author jackhance
  * @mail jackhance0825@163.com
  */
-public class DelimiterProtocolEncoder extends MessageToMessageEncoder<String> {
+public class LengthFieldProtocolEncoder extends MessageToMessageEncoder<String> {
 
     @Override
     protected void encode(ChannelHandlerContext ctx, String msg, List<Object> out) throws Exception {

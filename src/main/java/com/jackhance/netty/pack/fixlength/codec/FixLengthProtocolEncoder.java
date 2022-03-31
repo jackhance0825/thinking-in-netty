@@ -1,4 +1,4 @@
-package com.jackhance.netty.message.lengthfield.codec;
+package com.jackhance.netty.pack.fixlength.codec;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -8,12 +8,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
- * length field message protocol encoder
+ * fix length message protocol encoder
  *
  * @author jackhance
  * @mail jackhance0825@163.com
  */
-public class LengthFieldProtocolEncoder extends MessageToMessageEncoder<String> {
+public class FixLengthProtocolEncoder extends MessageToMessageEncoder<String> {
 
     @Override
     protected void encode(ChannelHandlerContext ctx, String msg, List<Object> out) throws Exception {

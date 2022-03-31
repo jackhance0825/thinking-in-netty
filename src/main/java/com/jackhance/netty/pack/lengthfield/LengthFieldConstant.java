@@ -1,4 +1,4 @@
-package com.jackhance.netty.message.lengthfield;
+package com.jackhance.netty.pack.lengthfield;
 
 /**
  * 常量

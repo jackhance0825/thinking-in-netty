@@ -1,9 +1,9 @@
-package com.jackhance.netty.message.delimiter;
+package com.jackhance.netty.pack.delimiter;
 
-import com.jackhance.netty.message.delimiter.codec.DelimiterFrameDecoder;
-import com.jackhance.netty.message.delimiter.codec.DelimiterFrameEncoder;
-import com.jackhance.netty.message.delimiter.codec.DelimiterProtocolDecoder;
-import com.jackhance.netty.message.delimiter.codec.DelimiterProtocolEncoder;
+import com.jackhance.netty.pack.delimiter.codec.DelimiterFrameDecoder;
+import com.jackhance.netty.pack.delimiter.codec.DelimiterFrameEncoder;
+import com.jackhance.netty.pack.delimiter.codec.DelimiterProtocolDecoder;
+import com.jackhance.netty.pack.delimiter.codec.DelimiterProtocolEncoder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
