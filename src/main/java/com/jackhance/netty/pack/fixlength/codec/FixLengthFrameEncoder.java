@@ -28,6 +28,7 @@ public class FixLengthFrameEncoder extends MessageToMessageEncoder<ByteBuf> {
         }
 
         ByteBuf dest = ctx.alloc().buffer(FixLengthConstant.LENGTH);
+        // 此处还需处理padding的问题，这里先不展开
         dest.writeBytes(msg);
         out.add(dest);
     }
